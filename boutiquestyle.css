@@ -1,0 +1,540 @@
+* {
+  /*la taille des elements inclus les margins et paddings*/
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e9e3e3;
+  font-family: "Roboto";
+}
+
+
+.portfolio{
+  margin-left: 10px;
+}
+
+/**Header NavBar**/
+header {
+  /*empeche de cacher le texte en dessous contrairement à fixed */
+  background-color: #e77171;
+  height: 10vh;   /*60%*/
+  width: 100%;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 4px 4px 0 #a88c8c2b;
+  transition: box-shadow 1s;
+  z-index: 1;
+  /*pour rester toujours en avant-plan*/
+  line-height: 0;
+}
+
+
+.shadowHeader {
+  box-shadow: 1px 8px 7px 2px #d474992b;
+}
+
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.progressBar-container {
+  width: 100%;
+  height: 4px;
+  background-color: #777777;
+}
+
+
+.progressBar {
+  height: 100%;
+  width: 0%;
+  background-color: rgb(230, 15, 69);
+  transition: all 0.2s;
+}
+
+
+/**NAVBAR**/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  /*taille du texte dynamique*/
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+}
+
+
+.logo a {
+  transition: color 0.5s;
+}
+
+
+.logo a:hover {
+  color: rgb(218, 42, 159);
+}
+
+.nav-ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-ul a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 39px;  /*56px*/
+  /*Aulieu de 60px à cause des 4px de la progressBar*/
+  width: 100px;
+  font-size: 1.25rem;
+}
+
+
+.nav-ul a:hover {
+  background-color: rgba(194, 45, 129, 0.179);
+  border-radius: 5px;
+  animation: flou 0.3s;
+}
+
+
+@keyframes flou {
+  from {
+      transform: translateX(-20px);
+      filter: blur(2px);
+  }
+  to {
+      transform: translateX(0);
+      filter: blur(0);
+  }
+}
+
+
+/************* boutique ***************/
+
+.container {
+  width: 100%;
+  font-size: 10px;
+}
+
+ 
+/* entête */
+.boutique {
+  display: flex;
+  justify-content: space-between;
+}    
+
+  
+/* vente en ligne, tendance et déco */
+.container h4 {
+  font-size: 1.25rem;
+  color: palevioletred;
+}
+
+
+
+p {
+  font-size: 0.90rem;   
+}
+
+
+/* texte Vente en ligne Mode, Tendance et Déco */
+.vente h4{
+  color: rgb(226, 31, 145);
+  text-align: center;
+}
+
+
+
+section h3 {
+  padding: 0 auto;
+}
+
+
+span .prix-produit {
+  padding: 2%;
+  font-size: 1.5rem;
+  width: 20%;
+  height: 50%;
+
+}
+
+
+/* texte mon compte */
+.compte-fond-ecran {
+  margin-right: 10px;
+  background-color: rgb(221, 226, 228);
+  height: 25%;  
+  width: 15%; 
+  display: inline;
+  text-align: center;   
+  font-size: 1rem;
+} 
+  
+
+p .produit-article {
+  font-size: 1.25rem;
+  padding-left:50px ;
+}
+
+
+/* paiement securisé -qui sommes-nous - services*/
+article h4{
+  color: rgb(242, 19, 167);
+  
+}
+
+
+/* paiement securisé -  qui sommes-nous, -  service */
+section{
+  display: flex;
+  justify-content: space-between;  
+  padding: 0.5%;
+  font-size: 1rem;
+  margin: 8px;
+  
+}
+
+
+/* bon plan -  objectif -  coup de coeur */
+main {
+  display: flex;
+  justify-content: space-between; 
+  text-align: center;
+  
+}
+
+
+/* texte bon plan - coup de coeur - objectif */
+.bon-plan,
+.coup-coeur,
+.objectif-plaisir {
+  border: 1px solid gray; 
+  width: 30%;
+  height: 30%; 
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.69);
+  font-size: 1rem;
+  background-color: rgb(215, 218, 215);
+
+  margin: 15px;
+}
+
+
+
+.prix-produit {
+  font-size: 0.75rem;
+  margin-left: 8%;
+}
+
+
+.paiement,
+.qui,
+.service {
+  color: rgb(214, 32, 87);
+  
+}
+
+/*texte pour les 2 images*/
+.produits,
+.livraison {
+  display: flex;
+  margin-top: -11px;
+} 
+
+ 
+footer ul {
+  background-color: #e77171;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  line-height: 1.5%;
+  margin: 0;
+  padding: 0;
+}    
+
+ 
+footer li a:hover {
+  color: rgb(216, 227, 230);   
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+
+/*Icone Hamburger*/
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+}
+
+
+.hamburger :first-child {
+  /*1ere barre pas de margin top*/
+  margin-top: 0;
+}
+
+
+.bar1, .bar2, .bar3 {
+  margin-top: 6px;
+  width: 35px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: white;
+  transition: all 0.7s;
+}
+
+
+.open .bar1, .open .bar2, .open .bar3 {
+  background-color: rgb(192, 127, 6);
+}
+
+
+.open .bar1 {
+  transform: translateY(200%) rotate(-45deg);
+}
+
+
+.open .bar2 {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+
+.open .bar3 {
+  transform: translateY(-200%) rotate(45deg);
+}
+
+
+.noScroll {
+  /*empeche le scroll sur le body via JS*/
+  overflow: hidden;
+}
+
+
+/************** Medias Queries *************/
+
+@media (max-width: 800px) {
+  .hamburger {
+      display: flex;
+  }
+  .nav-ul {
+      position: fixed;
+      top: 60px;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      background-color: rgba(0, 0, 0, 0.4);
+      transition: transform 0.5s ease-out;
+  }
+  .slide {
+      transform: translate(100%);
+  }
+  .nav-ul a {    
+      justify-content: left;
+      padding-left: 5px;
+      width: 23%;
+      border-bottom: 1px solid rgba(192, 127, 6, 0.2);
+
+      font-size: 1rem;
+  }
+
+  .nav-ul a:hover {
+      border-radius: 0;
+      animation: none;
+  }
+
+  article p{
+      font-size: 1rem;
+  }
+}
+
+
+/* MEDIAS QUERIES Boutique */
+@media screen and (maw-width:1400px) {   
+  .mon-compte{
+    font-size: 0.35rem; 
+  }
+}
+
+
+@media screen and (max-width:1400px){
+  p .produit-article{
+    font-size: 1rem;
+  }
+
+  span .prix-produit{
+    font-size: 1rem;
+  }
+}
+
+
+@media screen and (max-width:1249) {
+  p .produit-article{
+    font-size: 0.85rem;
+  }
+}
+
+
+@media screen and (max-width:800) {
+  p .produit-article{
+    font-size: 0.25rem;
+  }
+}
+
+
+@media screen and (max-width:1400px) {
+  /* paiement securisé -qui sommes-nous - services */
+  article h4{
+  color: rgb(242, 19, 167);
+  font-size: 0.85rem;
+  }
+
+  article p{
+    font-size:0.75rem ;
+  }
+}
+
+
+@media screen and (max-width:550px) {
+  
+  article p{
+    font-size:0.45rem ;
+  }
+
+}
+
+
+/* footer */
+@media screen and (max-width: 1400px) {
+  footer ul li {     
+    font-size: 1rem;
+    padding: 8px;
+    margin: 0px;
+   
+  }
+}
+
+
+/* footer */
+@media screen and (max-width: 1000px) {
+  footer ul li {    
+    font-size: 0.85rem;
+    padding: 8px;
+    margin: 0px;
+   
+  }
+}
+
+
+/* footer */
+@media screen and (max-width: 870px) {
+  footer ul li {  
+    font-size: 0.65rem;
+    padding: 8px;
+    margin: 0px;
+   
+  }
+}
+
+
+/* footer */
+@media screen and (max-width: 650px) {
+  footer ul li {    
+    font-size: 0.55rem;
+    padding: 8px;
+    margin: 0px;
+   
+  }
+}
+
+/* footer */
+@media screen and (max-width: 569px) {
+  footer ul li {     
+    font-size: 0.30rem;
+    padding: 8px;
+    margin: 0px;
+   
+  }
+}
+
+
+/* hover sur footer*/
+@media screen and (max-width:1400px) {
+  footer li a:hover {
+      color: rgb(216, 227, 230);   
+      padding: 0;
+      margin: 0;
+      font-size: 0.90rem;
+  }
+
+}
+
+
+/* hover sur footer*/
+@media screen and (max-width:1000px) {
+  footer li a:hover {
+      color: rgb(216, 227, 230);   
+      padding: 0;
+      margin: 0;
+      font-size: 0.75rem;
+  }
+
+}
+
+
+/* hover sur footer*/
+@media screen and (max-width:870px) {
+  footer li a:hover {
+      color: rgb(216, 227, 230);   
+      padding: 0;
+      margin: 0;
+      font-size: 0.65rem;
+  }
+
+}
+
+
+/* hover sur footer*/
+@media screen and (max-width:650px) {
+  footer li a:hover {
+      color: rgb(216, 227, 230);   
+      padding: 0;
+      margin: 0;
+      font-size: 0.55rem;
+  }
+
+}
+
+/* hover sur footer*/
+@media screen and (max-width:569px) {
+  footer li a:hover {
+      color: rgb(216, 227, 230);   
+      padding: 0;
+      margin: 0;
+      font-size: 0.35rem;
+  }
+}
